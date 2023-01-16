@@ -17,21 +17,6 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "prettier/prettier": "error",
-    "import/no-unresolved": [
-      "error",
-      {
-        "plugins": [
-          "module-resolve",
-          {
-            "alias": {
-              "@routes": "./src/routes",
-              "@constrollers": "./src/controllers",
-              "@config": "./src/confing"
-            }
-          }
-        ]
-      }
-    ]
+    "prettier/prettier": "error"
   }
 }
