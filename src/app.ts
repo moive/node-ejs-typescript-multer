@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
+import expressLayouts from 'express-ejs-layouts';
 
 import { uploadRouter } from './routes';
 
@@ -8,6 +9,8 @@ const app = express();
 
 // Settings
 app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts);
+app.set('layout', path.join(__dirname, 'views/layouts/Site'));
 app.set('view engine', 'ejs');
 
 // Middlewares
