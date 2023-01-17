@@ -6,6 +6,8 @@ import expressLayouts from 'express-ejs-layouts';
 import { uploadRouter } from './routes';
 
 const app = express();
+// Static Files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Settings
 app.set('views', path.join(__dirname, 'views'));
