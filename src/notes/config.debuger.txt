@@ -1,0 +1,32 @@
+//name file .vscode/launch.json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Service",
+      "runtimeVersion": "19.3.0",
+      "preLaunchTask": "npm: build",
+      "runtimeArgs": ["start"], // npm run start
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "type": "node",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Watch",
+      "runtimeVersion": "19.3.0",
+      "runtimeArgs": ["start","dev"], // npm run dev
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "type": "node",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
