@@ -1,4 +1,6 @@
 import { Request, Response, Router } from 'express';
+import { uploadController } from '../controllers/upload.controller';
+import multerMiddleware from '../middlewares/upload';
 
 const router = Router();
 router.get('/', (req: Request, res: Response) => {
@@ -7,9 +9,6 @@ router.get('/', (req: Request, res: Response) => {
   res.render('index', { title: 'Home Page', year });
 });
 
-router.post('/upload', (req, res) => {
-  console.log(req.file);
-  res.send({ message: 'Uploaded' });
-});
+router.post('/upload', multerMiddleware.single('file'), uploadController);
 
 export { router as uploadRouter };
