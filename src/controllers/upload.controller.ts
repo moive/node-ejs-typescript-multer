@@ -1,12 +1,18 @@
-import { Request, Response } from 'express';
+import { Response } from 'express';
+import { ReqError } from '../interfaces/req.interfaces';
 
-const uploadController = (req: Request, res: Response): void => {
-  console.log(12121212);
+const uploadController = (req: ReqError, res: Response): Response => {
+  const file = req.file;
+
+  if (!file) {
+    const error = new Error('Please upload a file');
+    return res.json({ ok: false, message: error.message });
+  }
   try {
-    res.send({ message: 'Uploaded from controller' });
+    return res.send({ message: 'Uploaded from controller' });
   } catch (e: any) {
     console.log('e===> ', e);
-    res.json({ message: 'Existe un error' });
+    return res.json({ message: 'Something wrong' });
   }
 };
 
