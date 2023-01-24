@@ -54,3 +54,5 @@ router.delete('/image/:id/delete', (req: Request, res: Response) => {
 });
 
 export { router as galleryRouter };
+// https://www.youtube.com/watch?v=aNYX2F1RX-s
+// 44
