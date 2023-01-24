@@ -1,5 +1,5 @@
-import { Request, Response, Router } from 'express';
-import { ReqError } from '../interfaces/req.interfaces';
+import { type Request, type Response, Router } from 'express';
+import type { ReqError } from '../interfaces/req.interfaces';
 import multer from 'multer';
 import { uploadController } from '../controllers/upload.controller';
 import multerMiddleware from '../middlewares/upload';

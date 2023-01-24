@@ -1,7 +1,7 @@
-import { Request } from 'express';
+import type { Request } from 'express';
 import multer, { diskStorage } from 'multer';
 import path from 'path';
-import { ReqError } from '../interfaces/req.interfaces';
+import type { ReqError } from '../interfaces/req.interfaces';
 
 const PATH_STORAGE = `${process.cwd()}/src/public/uploads`;
 const maxSize = 1 * 1024 * 1024; // for 1MB

@@ -1,5 +1,5 @@
-import { Response } from 'express';
-import { ReqError } from '../interfaces/req.interfaces';
+import type { Response } from 'express';
+import type { ReqError } from '../interfaces/req.interfaces';
 
 const uploadController = (req: ReqError, res: Response): Response => {
   const file = req.file;
