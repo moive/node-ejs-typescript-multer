@@ -4,7 +4,7 @@ import path from 'path';
 import type { ReqError } from '../interfaces/req.interfaces';
 
 const PATH_STORAGE = `${process.cwd()}/src/public/uploads`;
-const maxSize = 1 * 1024 * 1024; // for 1MB
+const maxSize = 2 * 1024 * 1024; // for 1MB
 
 const storage = diskStorage({
   destination(req: Request, file: Express.Multer.File, cb: any) {
