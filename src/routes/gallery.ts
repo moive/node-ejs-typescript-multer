@@ -3,12 +3,11 @@ import type { ReqError } from '../interfaces/req.interfaces';
 import multer from 'multer';
 import { uploadController } from '../controllers/upload.controller';
 import multerMiddleware from '../middlewares/upload';
+import { getAllImages } from '../controllers/getAllImages.controllers';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.render('gallery', { title: 'Gallery Page' });
-});
+router.get('/', getAllImages);
 
 router.get('/upload', (req: Request, res: Response) => {
   res.render('upload', { title: 'Upload Page' });
