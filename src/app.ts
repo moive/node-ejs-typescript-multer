@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views/pages'));
 app.use(expressLayouts);
 app.set('layout', path.join(__dirname, 'views/layouts/Site'));
+app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 
 // Middlewares
