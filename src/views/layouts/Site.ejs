@@ -16,5 +16,20 @@
     <main class="container mx-auto px-2 py-10"><%- body %></main>
     <%- include('../partials/footer.ejs', {year: 2024}) %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-packery@2/packery-mode.pkgd.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        var elem = document.querySelector('.grid');
+        if (elem) {
+          var iso = new Isotope(elem, {
+            // options
+            itemSelector: '.grid-item',
+            layoutMode: 'packery'
+            // layoutMode: 'fitRows'
+          });
+        }
+      });
+    </script>
   </body>
 </html>
