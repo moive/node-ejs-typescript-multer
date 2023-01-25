@@ -5,6 +5,7 @@ import expressLayouts from 'express-ejs-layouts';
 
 import { uploadRouter } from './routes';
 import { galleryRouter } from './routes/gallery';
+import TimeFormat from './middlewares/timeFormat';
 
 const app = express();
 // Static Files
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(TimeFormat);
 
 // Routes
 app.use('/', uploadRouter);
