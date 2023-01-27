@@ -4,6 +4,7 @@ import multer from 'multer';
 import { uploadController } from '../controllers/upload.controller';
 import multerMiddleware from '../middlewares/upload';
 import { getAllImages } from '../controllers/getAllImages.controllers';
+import { getImage } from '../controllers/getImage.controller';
 
 const router = Router();
 
@@ -44,9 +45,7 @@ router.post(
   uploadController
 );
 
-router.get('/image/:id', (req: Request, res: Response) => {
-  res.send('image: ' + req.params['id']);
-});
+router.get('/image/:id', getImage);
 
 router.delete('/image/:id/delete', (req: Request, res: Response) => {
   res.send(`deleting image: + ${req.params['id']}`);
@@ -54,4 +53,3 @@ router.delete('/image/:id/delete', (req: Request, res: Response) => {
 
 export { router as galleryRouter };
 // https://www.youtube.com/watch?v=aNYX2F1RX-s
-// 44
