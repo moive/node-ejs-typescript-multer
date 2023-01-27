@@ -7,9 +7,9 @@ const getImage = async (req: Request, res: Response): Promise<any> => {
     const image = await Image.findOne({ _id: id });
     res.render('detailImage', { title: 'Detail Image', image });
   } catch (e: any) {
-    console.log(e);
-    const error = { ok: false, message: 'Not found' };
-    res.render('detailImage', { title: 'Detail Image', error });
+    console.log(e.message);
+    const error = 'The resource could not be found';
+    res.render('404', { title: 'Not Found', error });
   }
 };
 
