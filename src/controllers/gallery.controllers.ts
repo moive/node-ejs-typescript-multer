@@ -3,6 +3,7 @@ import type { ReqError } from '../interfaces/req.interfaces';
 import Image from '../models/image.model';
 import { unlink } from 'fs-extra';
 import path from 'path';
+import { cloudinary } from '../config';
 
 const uploadController = async (
   req: ReqError,
@@ -15,17 +16,29 @@ const uploadController = async (
     return res.json({ ok: false, message: error.message });
   }
   try {
+    const resultCloud = await cloudinary.uploader.upload(file.path, {
+      folder: 'moive/',
+      use_filename: true,
+      unique_filename: false,
+      overwrite: true
+    });
+    console.log('======');
+    console.log(resultCloud);
+    console.log('--------------');
     const { title, description } = req.body;
     const image = new Image();
     image.title = title;
     image.description = description;
     image.filename = file.filename;
     image.path = '/uploads/' + file.filename;
+    image.imageUrl = resultCloud.secure_url;
+    image.public_id = resultCloud.public_id;
     image.originalname = file.originalname;
     image.mimetype = file.mimetype;
     image.size = file.size;
     console.log(image);
     await image.save();
+    await unlink(path.join(__dirname, '../public', image.path));
     res.redirect('/gallery');
     return;
     // return res.send({ message: 'Uploaded from controller', image });

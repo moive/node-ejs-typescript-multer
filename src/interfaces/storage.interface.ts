@@ -3,6 +3,8 @@ export interface IStorage {
   description: string;
   filename: string;
   path: string;
+  imageUrl: string;
+  public_id: string;
   originalname: string;
   mimetype: string;
   size: number;

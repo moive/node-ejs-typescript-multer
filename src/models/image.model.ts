@@ -15,6 +15,12 @@ const ImageSchema = new Schema<IStorage>(
     path: {
       type: String
     },
+    imageUrl: {
+      type: String
+    },
+    public_id: {
+      type: String
+    },
     originalname: {
       type: String
     },
