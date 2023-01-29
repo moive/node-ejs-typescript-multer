@@ -4,11 +4,11 @@
   <div class="grid-item w-full sm:w-1/2 lg:w-1/3 p-3">
     <div
       class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-full animate__animated animate__zoomIn animate__delay-0.8s">
-      <a href="#">
+      <a href="/gallery/image/<%= image.id %>">
         <img class="rounded-t-lg" src="<%= image.path %> " alt="" />
       </a>
       <div class="p-5">
-        <a href="#">
+        <a href="/gallery/image/<%= image.id %>">
           <h5
             class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             ><%= image.title %>
@@ -21,7 +21,7 @@
           <time><%= format(image.createdAt) %> </time>
         </p>
         <a
-          href="/gallery/image/<%= image.id %> "
+          href="/gallery/image/<%= image.id %>"
           class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg">
           Read more
           <svg
