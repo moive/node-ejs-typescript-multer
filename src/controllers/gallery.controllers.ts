@@ -69,8 +69,8 @@ const deleteImage = async (
   const { id } = req.params;
   try {
     const image = await Image.findByIdAndDelete(id);
-    await unlink(path.resolve('./src/public' + image?.path));
-    console.log(image);
+    await unlink(path.join(__dirname, '../public' + image?.path));
+    // console.log(image);
     res.redirect('/gallery');
   } catch (e: any) {
     console.log(e.message);

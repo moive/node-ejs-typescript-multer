@@ -3,7 +3,7 @@ import multer, { diskStorage } from 'multer';
 import path from 'path';
 import type { ReqError } from '../interfaces/req.interfaces';
 
-const PATH_STORAGE = `${process.cwd()}/src/public/uploads`;
+const PATH_STORAGE = path.join(__dirname, '../public/uploads');
 const maxSize = 2 * 1024 * 1024; // for 1MB
 
 const storage = diskStorage({
