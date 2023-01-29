@@ -9,7 +9,14 @@ const getImage = async (req: Request, res: Response): Promise<any> => {
   } catch (e: any) {
     console.log(e.message);
     const error = 'The resource could not be found';
-    res.render('404', { title: 'Not Found', error });
+    res.render('404', {
+      title: 'Not Found',
+      error,
+      optsLink: {
+        url: '/gallery',
+        text: 'Go to Gallery'
+      }
+    });
   }
 };
 
