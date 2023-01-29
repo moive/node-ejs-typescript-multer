@@ -26,6 +26,7 @@
         "checksConditionals": false,
         "checksVoidReturn": false
       }
-    ]
+    ],
+    "@typescript-eslint/restrict-plus-operands": "off"
   }
 }

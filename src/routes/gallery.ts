@@ -1,10 +1,13 @@
 import { type Request, type Response, Router } from 'express';
 import type { ReqError } from '../interfaces/req.interfaces';
 import multer from 'multer';
-import { uploadController } from '../controllers/upload.controller';
 import multerMiddleware from '../middlewares/upload';
-import { getAllImages } from '../controllers/getAllImages.controllers';
-import { getImage } from '../controllers/getImage.controller';
+import {
+  uploadController,
+  getAllImages,
+  getImage,
+  deleteImage
+} from '../controllers/gallery.controllers';
 
 const router = Router();
 
@@ -47,9 +50,7 @@ router.post(
 
 router.get('/image/:id', getImage);
 
-router.delete('/image/:id/delete', (req: Request, res: Response) => {
-  res.send(`deleting image: + ${req.params['id']}`);
-});
+router.get('/image/:id/delete', deleteImage);
 
 export { router as galleryRouter };
 // https://www.youtube.com/watch?v=aNYX2F1RX-s
