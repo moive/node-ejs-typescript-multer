@@ -7,7 +7,8 @@ const get404 = (req: Request, res: Response): any => {
     optsLink: {
       url: '/',
       text: 'Go Home'
-    }
+    },
+    namePage: '404'
   });
 };
 

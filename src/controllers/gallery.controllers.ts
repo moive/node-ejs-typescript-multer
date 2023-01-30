@@ -74,7 +74,8 @@ const getImage = async (req: Request, res: Response): Promise<any> => {
       optsLink: {
         url: '/gallery',
         text: 'Go to Gallery'
-      }
+      },
+      namePage: 'gallery'
     });
   }
 };
@@ -98,7 +99,8 @@ const deleteImage = async (
       optsLink: {
         url: '/',
         text: 'Go Home'
-      }
+      },
+      namePage: 'gallery'
     });
   }
 };
