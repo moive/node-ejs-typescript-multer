@@ -22,9 +22,9 @@ const uploadController = async (
       unique_filename: false,
       overwrite: true
     });
-    console.log('======');
+    /* console.log('======');
     console.log(resultCloud);
-    console.log('--------------');
+    console.log('--------------'); */
     const { title, description } = req.body;
     const image = new Image();
     image.title = title;
@@ -36,7 +36,7 @@ const uploadController = async (
     image.originalname = file.originalname;
     image.mimetype = file.mimetype;
     image.size = file.size;
-    console.log(image);
+    /* console.log(image); */
     await image.save();
     await unlink(path.join(__dirname, '../public', image.path));
     res.redirect('/gallery');
