@@ -14,7 +14,7 @@ const router = Router();
 router.get('/', getAllImages);
 
 router.get('/upload', (req: Request, res: Response) => {
-  res.render('upload', { title: 'Upload Page' });
+  res.render('upload', { title: 'Upload Page', namePage: 'gallery' });
 });
 
 router.post(

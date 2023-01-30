@@ -4,7 +4,7 @@ import { get404 } from '../controllers/404.controller';
 const router = Router();
 
 router.get('/', (req: Request, res: Response) => {
-  res.render('index', { title: 'Home Page' });
+  res.render('index', { title: 'Home Page', namePage: 'home' });
 });
 
 router.get('/404', get404);

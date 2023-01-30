@@ -53,14 +53,18 @@ const getAllImages = async (
   res: Response
 ): Promise<Response | any> => {
   const images = await Image.find();
-  res.render('gallery', { title: 'Gallery Page', images });
+  res.render('gallery', { title: 'Gallery Page', images, namePage: 'gallery' });
 };
 
 const getImage = async (req: Request, res: Response): Promise<any> => {
   const { id } = req.params;
   try {
     const image = await Image.findOne({ _id: id });
-    res.render('detailImage', { title: 'Detail Image', image });
+    res.render('detailImage', {
+      title: 'Detail Image',
+      image,
+      namePage: 'gallery'
+    });
   } catch (e: any) {
     console.log(e.message);
     const error = 'The resource could not be found';
