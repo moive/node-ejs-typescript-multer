@@ -1,9 +1,15 @@
 import type { Request } from 'express';
 import multer, { diskStorage } from 'multer';
 import path from 'path';
+import { existsSync, mkdirSync } from 'fs-extra';
 import type { ReqError } from '../interfaces/req.interfaces';
 
-const PATH_STORAGE = path.join(__dirname, '../public/uploads');
+const mkdirStorage = path.join(__dirname, '../public/uploads');
+
+if (!existsSync(mkdirStorage)) mkdirSync(mkdirStorage);
+
+const PATH_STORAGE = mkdirStorage;
+
 const maxSize = 2 * 1024 * 1024; // for 1MB
 
 const storage = diskStorage({
